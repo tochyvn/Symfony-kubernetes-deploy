@@ -4,11 +4,13 @@ ARG TIMEZONE
 
 MAINTAINER TOCHAP NGASSAM Lionel <tochlion@yahoo.fr>
 
+RUN php --ini
+
 RUN apt-get update && apt-get install -y \
     openssl \
     git \
     unzip \
-    php7.2-zip
+    php7.1-zip
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
