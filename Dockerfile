@@ -5,6 +5,7 @@ ARG TIMEZONE
 MAINTAINER TOCHAP NGASSAM Lionel <tochlion@yahoo.fr>
 
 RUN php --ini
+RUN php --ini
 
 RUN apt-get update && apt-get install -y \
     openssl \
