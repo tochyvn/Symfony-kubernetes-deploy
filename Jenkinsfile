@@ -7,11 +7,11 @@ pipeline {
     stage('Build') {
 	    steps {
     	    script {
-    		 image_name = "symfony-kube-deploy"
-		 archive_name = "${image_name}.tgz"
-    		 sh "docker build -t ${image_name} ."
-		 sh "docker save ${image_name} | gzip > ${archive_name}"
-	         }
+                 image_name = "symfony-kube-deploy"
+                 archive_name = "${image_name}.tgz"
+                 sh "docker build -t ${image_name} ."
+                 sh "docker save ${image_name} | gzip > ${archive_name}"
+	        }
    	    archiveArtifacts artifacts: "${archive_name}"
 
             }
