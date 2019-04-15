@@ -1,5 +1,5 @@
 # See https://github.com/docker-library/php/blob/master/7.1/fpm/Dockerfile
-php:7.2-fpm
+FROM php:7.2-fpm
 ARG TIMEZONE
 
 MAINTAINER TOCHAP NGASSAM Lionel <tochlion@yahoo.fr>
