@@ -11,7 +11,7 @@ pipeline {
                  archive_name = "${image_name}.tgz"
 		 sh "sudo docker ps"
                  sh "sudo docker build -t ${image_name} ."
-                 sh " sudo docker save ${image_name} | gzip > ${archive_name}"
+                 sh "sudo docker save ${image_name} | gzip > ${archive_name}"
 	        }
    	    archiveArtifacts artifacts: "${archive_name}"
 
@@ -21,7 +21,7 @@ pipeline {
     stage('Clean') {
 	 steps {
 		script {
-			sh 'docker images -q -f dangling=true | xargs --no-run-if-empty docker rmi'
+			sh 'sudo docker images -q -f dangling=true | xargs --no-run-if-empty docker rmi'
 			}
 		}
 	}
