@@ -38,11 +38,11 @@ RUN echo 'alias sf="php app/console"' >> ~/.bashrc \
 && echo 'alias sf3="php bin/console"' >> ~/.bashrc
 
 RUN mkdir -pv /home/symfony-kubectl-deploy
-ADD . /home/symfony-kubectl-deploy
+ADD ../../ /home/symfony-kubectl-deploy
 EXPOSE 8000
 
 WORKDIR /home/symfony-kubectl-deploy
 
 RUN composer install
-CMD php -S 0.0.0.0:8000 -t ./public
+CMD php -S 0.0.0.0:8000 -t ../../public
 
