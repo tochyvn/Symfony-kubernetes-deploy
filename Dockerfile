@@ -1,17 +1,17 @@
 # See https://github.com/docker-library/php/blob/master/7.1/fpm/Dockerfile
-FROM php:7.1-fpm
+php:7.2-fpm
 ARG TIMEZONE
 
 MAINTAINER TOCHAP NGASSAM Lionel <tochlion@yahoo.fr>
 
-RUN php --ini
+RUN php -v
 RUN php --ini
 
 RUN apt-get update && apt-get install -y \
     openssl \
     git \
     unzip \
-    php7.1-zip
+    php7.2-zip
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
