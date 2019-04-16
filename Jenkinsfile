@@ -21,7 +21,7 @@ pipeline {
     stage('Clean') {
 	 steps {
 		script {
-			sh 'sudo docker images -q -f dangling=true | sudo xargs --no-run-if-empty docker rmi'
+			sh 'sudo docker image prune --force'
 			}
 		}
 	}
