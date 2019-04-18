@@ -9,7 +9,7 @@ pipeline {
     	    script {
                  image_name = "symfony-kube-deploy"
                  archive_name = "${image_name}.tgz"
-		 sh "sudo docker ps"
+		         sh "sudo docker ps"
                  sh "sudo docker build -t ${image_name} ."
                  sh "sudo docker save ${image_name} | gzip > ${archive_name}"
 	        }
